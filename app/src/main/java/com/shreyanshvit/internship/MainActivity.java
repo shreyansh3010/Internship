@@ -1,5 +1,7 @@
 package com.shreyanshvit.internship;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -12,6 +14,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+
+import com.shreyanshvit.internship.Fragment.About;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -52,12 +56,7 @@ public class MainActivity extends AppCompatActivity
         }
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.main, menu);
-        return true;
-    }
+
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -89,10 +88,34 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.nav_manage) {
 
         } else if (id == R.id.nav_share) {
+            Intent sharingIntent = new Intent(android.content.Intent.ACTION_SEND);
+            sharingIntent.setType("text/plain");
+            String shareBody = "Here is the share content body";
+            sharingIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, "Subject Here");
+            sharingIntent.putExtra(android.content.Intent.EXTRA_TEXT, shareBody);
+            startActivity(Intent.createChooser(sharingIntent, "Share via"));
 
-        } else if (id == R.id.nav_send) {
+        } else if (id == R.id.nav_feedback) {
+            Intent intent = new Intent(Intent.ACTION_SEND);
+            getIntent().setData(Uri.parse(("mailto: ")));
+            String[] to = {"shreyanshjain.2015@vit.ac.in"};
+            intent.putExtra(Intent.EXTRA_EMAIL, to);
+            intent.putExtra(Intent.EXTRA_SUBJECT, "Kotlin App Feedback");
+            intent.setType("message/rfc822");
+            startActivity(Intent.createChooser(intent, "Send Email"));
 
+        } else if (id == R.id.nav_rate) {
+            startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=ranjih.kotlinandroid")));
+
+        } else if (id == R.id.nav_about) {
+            About fragment = new About();
+            android.support.v4.app.FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+            fragmentTransaction.replace(R.id.fragment_container, fragment);
+            fragmentTransaction.commit();
+            getSupportActionBar().setTitle("About Us");
         }
+
+
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
