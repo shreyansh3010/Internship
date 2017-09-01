@@ -26,7 +26,7 @@ public class About extends Fragment {
 
         view = inflater.inflate(R.layout.fragment_about, container, false);
 
-        String x = "Kotlin-Android is one of the most useful app to learn Kotlin easily.\n\nAdvantages:\n1.Simple and Easy Tutotrial\nOffline feature\n3.Java-Kotlin Comparision\n4.Learn sample programs\n5.Video Tutorials";
+        String x = "Kotlin-Android is one of the most useful app to learn Kotlin easily.\n\nAdvantages:\n1.Simple and Easy Tutotrial\n2.Offline feature\n3.Java-Kotlin Comparision\n4.Learn sample programs\n5.Video Tutorials";
 
         String y = "Name : Shreyansh Jain\nEmail : shreyanshjain.2015@vit.ac.in";
 
