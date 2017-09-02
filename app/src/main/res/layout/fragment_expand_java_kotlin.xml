@@ -1,0 +1,65 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.shreyanshvit.internship.Fragment.java_kotlin.expand_java_kotlin">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <ScrollView
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent">
+        <LinearLayout
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:orientation="vertical">
+    <TextView
+        android:id="@+id/head_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/hello_blank_fragment"
+        android:textSize="30sp"
+        android:padding="@dimen/activity_vertical_margin"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Java"
+                android:textSize="20sp"
+                android:padding="@dimen/activity_vertical_margin"/>
+
+            <TextView
+                android:id="@+id/java_code"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Java"
+                android:textSize="13sp"
+                android:textColor="#1d19e8"
+                android:padding="@dimen/activity_vertical_margin"
+                android:background="@drawable/code_outline"
+                android:layout_margin="@dimen/activity_vertical_margin"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Kotlin"
+                android:textSize="20sp"
+                android:padding="@dimen/activity_vertical_margin"/>
+
+            <TextView
+                android:id="@+id/kotlin_code"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Java"
+                android:textSize="13sp"
+                android:textColor="#1d19e8"
+                android:padding="@dimen/activity_vertical_margin"
+                android:background="@drawable/code_outline"
+                android:layout_margin="@dimen/activity_vertical_margin"/>
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</FrameLayout>
