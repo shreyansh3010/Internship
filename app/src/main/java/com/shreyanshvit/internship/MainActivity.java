@@ -17,6 +17,7 @@ import android.view.MenuItem;
 
 import com.shreyanshvit.internship.Fragment.About;
 import com.shreyanshvit.internship.Fragment.KotlinBasic.KotlinBasic;
+import com.shreyanshvit.internship.Fragment.android_program.android_program;
 import com.shreyanshvit.internship.Fragment.java_kotlin.java_kotlin;
 
 public class MainActivity extends AppCompatActivity
@@ -100,9 +101,14 @@ public class MainActivity extends AppCompatActivity
             android.support.v4.app.FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
             fragmentTransaction.replace(R.id.fragment_container, fragment);
             fragmentTransaction.commit();
-            getSupportActionBar().setTitle("Java To Kotlin");
+            getSupportActionBar().setTitle("Android Programs");
 
         } else if (id == R.id.nav_manage) {
+            android_program fragment = new android_program();
+            android.support.v4.app.FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+            fragmentTransaction.replace(R.id.fragment_container, fragment);
+            fragmentTransaction.commit();
+            getSupportActionBar().setTitle("Java To Kotlin");
 
         } else if (id == R.id.nav_share) {
             Intent sharingIntent = new Intent(android.content.Intent.ACTION_SEND);

@@ -45,6 +45,8 @@ public class expand_java_kotlin extends Fragment {
         setcode(strtext);
         textView.setText(strtext);
 
+
+
         return view;
     }
 
