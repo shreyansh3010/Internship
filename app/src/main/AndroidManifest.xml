@@ -24,7 +24,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Fragment.videos.youtube_video"></activity>
+        <activity android:name=".Fragment.videos.youtube_video"
+            android:parentActivityName=".MainActivity"></activity>
     </application>
 
 </manifest>

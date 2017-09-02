@@ -4,6 +4,8 @@ import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentActivity;
+import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,6 +13,7 @@ import android.widget.ExpandableListAdapter;
 import android.widget.ExpandableListView;
 import android.widget.Toast;
 
+import com.shreyanshvit.internship.Fragment.android_program.expand_android_program;
 import com.shreyanshvit.internship.R;
 
 import java.util.ArrayList;
@@ -61,7 +64,15 @@ public class KotlinBasic extends Fragment {
             @Override
             public boolean onChildClick(ExpandableListView parent, View v,
                                         int groupPosition, int childPosition, long id) {
-
+                expand_kotlin_basic fragment = new expand_kotlin_basic();
+                FragmentTransaction fragmentTransaction = ((FragmentActivity)v.getContext()).getSupportFragmentManager().beginTransaction();
+                fragmentTransaction.replace(R.id.fragment_container, fragment);
+                Bundle bundle=new Bundle();
+                bundle.putString("name", expandableListDetail.get(
+                        expandableListTitle.get(groupPosition)).get(
+                        childPosition));
+                fragment.setArguments(bundle);
+                fragmentTransaction.commit();
                 return false;
             }
         });
