@@ -1,5 +1,6 @@
 package com.shreyanshvit.internship;
 
+import android.app.FragmentManager;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -19,6 +20,7 @@ import com.shreyanshvit.internship.Fragment.About;
 import com.shreyanshvit.internship.Fragment.KotlinBasic.KotlinBasic;
 import com.shreyanshvit.internship.Fragment.android_program.android_program;
 import com.shreyanshvit.internship.Fragment.java_kotlin.java_kotlin;
+import com.shreyanshvit.internship.Fragment.videos.videos;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -40,8 +42,11 @@ public class MainActivity extends AppCompatActivity
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                KotlinBasic fragment = new KotlinBasic();
+                android.support.v4.app.FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+                fragmentTransaction.replace(R.id.fragment_container, fragment);
+                fragmentTransaction.commit();
+                getSupportActionBar().setTitle("Kotlin Basics");
             }
         });
 
@@ -95,6 +100,11 @@ public class MainActivity extends AppCompatActivity
             fragmentTransaction.commit();
             getSupportActionBar().setTitle("Kotlin Basics");
         } else if (id == R.id.nav_gallery) {
+            videos fragment = new videos();
+            android.support.v4.app.FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+            fragmentTransaction.replace(R.id.fragment_container, fragment);
+            fragmentTransaction.commit();
+            getSupportActionBar().setTitle("Videon Tutorials");
 
         } else if (id == R.id.nav_slideshow) {
             java_kotlin fragment = new java_kotlin();
